@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jose | Photography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .gallery-img {
+            transition: all 0.4s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.03);
+            filter: brightness(0.85);
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1920x1080/111111/ffffff?text=Your+Hero+Photo');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+
+    <!-- Hero -->
+    <section class="hero-bg h-screen flex items-center justify-center text-center px-6">
+        <div>
+            <h1 class="text-6xl md:text-7xl font-light tracking-tight mb-4">Jose</h1>
+            <p class="text-2xl md:text-3xl text-zinc-400 font-light">Photography</p>
+            <div class="mt-12">
+                <a href="#gallery" class="inline-block border border-zinc-400 hover:border-white px-10 py-4 text-lg tracking-widest transition">VIEW WORK</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-light text-center mb-16 tracking-wide">Selected Work</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="photo-grid">
+            <!-- Add your photos here - replace the placeholder URLs -->
+            <div class="group">
+                <img src="https://via.placeholder.com/800x800/1a1a1a/ffffff?text=Photo+1" 
+                     alt="Photo 1" class="gallery-img w-full h-96 object-cover cursor-pointer rounded-lg">
+            </div>
+            <div class="group">
+                <img src="https://via.placeholder.com/800x800/1a1a1a/ffffff?text=Photo+2" 
+                     alt="Photo 2" class="gallery-img w-full h-96 object-cover cursor-pointer rounded-lg">
+            </div>
+            <div class="group">
+                <img src="https://via.placeholder.com/800x800/1a1a1a/ffffff?text=Photo+3" 
+                     alt="Photo 3" class="gallery-img w-full h-96 object-cover cursor-pointer rounded-lg">
+            </div>
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="py-24 bg-zinc-900 px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl font-light mb-10">About Me</h2>
+            <p class="text-zinc-400 text-lg leading-relaxed">
+                I'm Jose, a photographer passionate about capturing raw moments and telling stories through light and shadow. 
+                Based in [Your City], I specialize in [your main style — e.g., street, landscape, portraits].
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-24 px-6 max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl font-light mb-10">Let's Connect</h2>
+        <div class="flex justify-center gap-8 text-3xl">
+            <a href="https://instagram.com/yourusername" target="_blank" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:your@email.com" class="hover:text-white transition"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="mt-12 text-zinc-500">© 2026 Jose Photography</p>
+    </section>
+
+    <!-- Simple Lightbox -->
+    <script>
+        document.querySelectorAll('.gallery-img').forEach(img => {
+            img.addEventListener('click', () => {
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 bg-black/95 flex items-center justify-center z-50';
+                modal.innerHTML = `
+                    <img src="${img.src}" class="max-h-[90vh] max-w-[90vw] rounded-lg">
+                    <button onclick="this.parentElement.remove()" class="absolute top-8 right-8 text-white text-4xl">&times;</button>
+                `;
+                document.body.appendChild(modal);
+            });
+        });
+    </script>
+</body>
+</html>
