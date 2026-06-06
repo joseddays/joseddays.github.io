@@ -7,90 +7,118 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .gallery-img {
-            transition: all 0.4s ease;
+        body {
+            font-family: 'Georgia', serif;
+            background: #1a1a1a url('https://via.placeholder.com/1920x1080/1f1f1f/555555?text=Subtle+Paper+Texture') repeat;
+            background-size: cover;
         }
-        .gallery-img:hover {
-            transform: scale(1.03);
-            filter: brightness(0.85);
+        .magazine-page {
+            background: #f8f1e3;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border: 1px solid #d4c8b5;
+            color: #222;
+        }
+        .page-flip {
+            transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1);
         }
         .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1920x1080/111111/ffffff?text=Your+Hero+Photo');
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), 
+                        url('https://via.placeholder.com/1920x1080/111111/ffffff?text=Your+Best+Hero+Photo');
             background-size: cover;
             background-position: center;
         }
     </style>
 </head>
-<body class="bg-zinc-950 text-zinc-200">
+<body class="bg-zinc-950 text-zinc-200 min-h-screen">
 
-    <!-- Hero -->
-    <section class="hero-bg h-screen flex items-center justify-center text-center px-6">
-        <div>
-            <h1 class="text-6xl md:text-7xl font-light tracking-tight mb-4">Jose</h1>
-            <p class="text-2xl md:text-3xl text-zinc-400 font-light">Photography</p>
-            <div class="mt-12">
-                <a href="#gallery" class="inline-block border border-zinc-400 hover:border-white px-10 py-4 text-lg tracking-widest transition">VIEW WORK</a>
+    <!-- Hero / Cover -->
+    <section class="hero-bg h-screen flex items-center justify-center text-center px-6 relative">
+        <div class="magazine-page p-12 max-w-2xl mx-auto">
+            <h1 class="text-7xl font-light tracking-tighter text-black mb-4">Jose</h1>
+            <p class="text-3xl text-amber-900 font-light">Photography</p>
+            <div class="mt-16">
+                <a href="#albums" class="inline-block border-2 border-amber-900 hover:bg-amber-900 hover:text-white px-12 py-5 text-xl transition">Open the Book</a>
             </div>
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section id="gallery" class="py-24 px-6 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-light text-center mb-16 tracking-wide">Selected Work</h2>
+    <!-- Albums Section (Page Flip Navigation) -->
+    <section id="albums" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-light text-center mb-16 text-amber-100">Albums</h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="photo-grid">
-            <!-- Add your photos here - replace the placeholder URLs -->
-            <div class="group">
-                <img src="https://via.placeholder.com/800x800/1a1a1a/ffffff?text=Photo+1" 
-                     alt="Photo 1" class="gallery-img w-full h-96 object-cover cursor-pointer rounded-lg">
+        <div class="flex justify-center gap-8 mb-12">
+            <button onclick="switchAlbum(0)" class="album-btn active px-8 py-3 border border-amber-800 hover:border-amber-400">Street</button>
+            <button onclick="switchAlbum(1)" class="album-btn px-8 py-3 border border-amber-800 hover:border-amber-400">Portraits</button>
+            <button onclick="switchAlbum(2)" class="album-btn px-8 py-3 border border-amber-800 hover:border-amber-400">Landscapes</button>
+        </div>
+
+        <!-- Album Pages -->
+        <div id="album-container" class="magazine-page p-8 max-w-5xl mx-auto">
+            <div id="album-content">
+                <!-- Content changes via JS -->
             </div>
-            <div class="group">
-                <img src="https://via.placeholder.com/800x800/1a1a1a/ffffff?text=Photo+2" 
-                     alt="Photo 2" class="gallery-img w-full h-96 object-cover cursor-pointer rounded-lg">
-            </div>
-            <div class="group">
-                <img src="https://via.placeholder.com/800x800/1a1a1a/ffffff?text=Photo+3" 
-                     alt="Photo 3" class="gallery-img w-full h-96 object-cover cursor-pointer rounded-lg">
-            </div>
-            <!-- Add more images as needed -->
         </div>
     </section>
 
-    <!-- About -->
-    <section class="py-24 bg-zinc-900 px-6">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-4xl font-light mb-10">About Me</h2>
-            <p class="text-zinc-400 text-lg leading-relaxed">
-                I'm Jose, a photographer passionate about capturing raw moments and telling stories through light and shadow. 
-                Based in [Your City], I specialize in [your main style — e.g., street, landscape, portraits].
-            </p>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="py-24 px-6 max-w-3xl mx-auto text-center">
-        <h2 class="text-4xl font-light mb-10">Let's Connect</h2>
-        <div class="flex justify-center gap-8 text-3xl">
-            <a href="https://instagram.com/yourusername" target="_blank" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:your@email.com" class="hover:text-white transition"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p class="mt-12 text-zinc-500">© 2026 Jose Photography</p>
-    </section>
-
-    <!-- Simple Lightbox -->
     <script>
-        document.querySelectorAll('.gallery-img').forEach(img => {
-            img.addEventListener('click', () => {
-                const modal = document.createElement('div');
-                modal.className = 'fixed inset-0 bg-black/95 flex items-center justify-center z-50';
-                modal.innerHTML = `
-                    <img src="${img.src}" class="max-h-[90vh] max-w-[90vw] rounded-lg">
-                    <button onclick="this.parentElement.remove()" class="absolute top-8 right-8 text-white text-4xl">&times;</button>
+        const albums = [
+            {
+                title: "Street",
+                images: [
+                    "https://via.placeholder.com/800x1000/ddd/333?text=Street+1",
+                    "https://via.placeholder.com/800x1000/ddd/333?text=Street+2"
+                ]
+            },
+            {
+                title: "Portraits",
+                images: [
+                    "https://via.placeholder.com/800x1000/ddd/333?text=Portrait+1",
+                    "https://via.placeholder.com/800x1000/ddd/333?text=Portrait+2"
+                ]
+            },
+            {
+                title: "Landscapes",
+                images: [
+                    "https://via.placeholder.com/800x1000/ddd/333?text=Landscape+1"
+                ]
+            }
+        ];
+
+        function switchAlbum(index) {
+            const container = document.getElementById('album-content');
+            let html = `<h3 class="text-3xl font-light mb-8 text-center">${albums[index].title}</h3>`;
+            
+            albums[index].images.forEach((src, i) => {
+                html += `
+                    <div class="mb-12 cursor-pointer" onclick="openLightbox('${src}')">
+                        <img src="${src}" class="w-full magazine-page p-4 shadow-2xl" alt="${albums[index].title} ${i+1}">
+                    </div>
                 `;
-                document.body.appendChild(modal);
             });
-        });
+            
+            container.innerHTML = html;
+            
+            // Simple "page flip" visual
+            const page = document.getElementById('album-container');
+            page.style.transform = 'rotateY(5deg)';
+            setTimeout(() => page.style.transform = 'rotateY(0deg)', 400);
+        }
+
+        // Simple Lightbox (magazine page style)
+        function openLightbox(src) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/95 flex items-center justify-center z-50 p-8';
+            modal.innerHTML = `
+                <div class="magazine-page max-w-4xl p-8 max-h-[90vh] overflow-auto">
+                    <img src="${src}" class="max-h-[80vh] mx-auto shadow-2xl" alt="Photo">
+                    <button onclick="this.closest('.fixed').remove()" class="absolute top-8 right-8 text-4xl text-amber-900 hover:text-black">&times;</button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Initialize first album
+        window.onload = () => switchAlbum(0);
     </script>
 </body>
 </html>
