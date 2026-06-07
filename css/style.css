@@ -1,0 +1,42 @@
+/* css/style.css */
+
+body {
+    font-family: 'Georgia', serif;
+}
+
+.hero-bg {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
+                url('../kitchen.png') center/cover no-repeat fixed;
+    min-height: 100vh;
+}
+
+.magazine-page {
+    background: rgba(248, 241, 227, 0.92);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    border: 1px solid #d4c8b5;
+    color: #1a1a1a;
+}
+
+.back-button {
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    color: #fcd34d;
+    transform: translateX(-6px);
+}
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+    .hero-bg {
+        background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), 
+                    url('../kitchen.png') center/cover no-repeat fixed;
+    }
+    .magazine-page {
+        margin: 20px 12px;
+        padding: 60px 30px !important;
+    }
+}
