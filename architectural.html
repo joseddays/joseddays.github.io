@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Street — Jose Photography</title>
+    <title>Architectural Work — Jose Photography</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Georgia', serif; background: #111; }
@@ -18,16 +18,13 @@
 <body class="min-h-screen py-12 px-6">
 
     <div class="max-w-5xl mx-auto">
-        <a href="index.html" class="inline-block mb-8 text-amber-900 hover:text-amber-700">← Back to Cover</a>
+        <a href="index.html" class="inline-block mb-8 text-amber-900 hover:text-amber-700 text-lg">← Back to Cover</a>
         
-        <div class="magazine-page p-12">
-            <h1 class="text-5xl font-light text-center mb-12">Street</h1>
+        <div class="magazine-page p-10 md:p-16">
+            <h1 class="text-5xl font-light text-center mb-12">Architectural Work</h1>
             
-            <!-- Add your photos here -->
-            <div class="space-y-12">
-                <img src="https://via.placeholder.com/900x1200/ddd/222?text=Street+Photo+1" 
-                     class="magazine-page p-6 shadow-2xl w-full cursor-pointer" onclick="openLightbox(this.src)">
-                <!-- Add more images like this -->
+            <div id="gallery" class="space-y-16">
+                <!-- Your photos will go here -->
             </div>
         </div>
     </div>
@@ -44,6 +41,20 @@
             `;
             document.body.appendChild(modal);
         }
+
+        // Placeholder - replace with your real image paths
+        const images = [
+            "https://via.placeholder.com/900x1200/ddd/222?text=Architectural+1",
+            "https://via.placeholder.com/900x1200/ddd/222?text=Architectural+2"
+        ];
+
+        const gallery = document.getElementById('gallery');
+        images.forEach(src => {
+            const div = document.createElement('div');
+            div.className = "cursor-pointer";
+            div.innerHTML = `<img src="${src}" class="w-full magazine-page p-8 shadow-2xl" onclick="openLightbox('${src}')">`;
+            gallery.appendChild(div);
+        });
     </script>
 </body>
 </html>
