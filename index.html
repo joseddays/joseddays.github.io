@@ -8,39 +8,46 @@
     <style>
         body {
             font-family: 'Georgia', serif;
-            background: #111 url('https://via.placeholder.com/1920x1200/1a1a1a/444?text=Dark+Paper+Texture') repeat;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
+                        url('kitchen.png') center/cover no-repeat fixed;
+            min-height: 100vh;
         }
         .magazine-page {
-            background: #f8f1e3;
+            background: rgba(248, 241, 227, 0.92);   /* Slightly transparent */
             box-shadow: 0 15px 40px rgba(0,0,0,0.7);
             border: 1px solid #d4c8b5;
             color: #1a1a1a;
         }
-        .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), 
-                        url('kitchen.png') center/cover no-repeat;
+        @media (max-width: 768px) {
+            .magazine-page {
+                background: rgba(248, 241, 227, 0.95);
+                margin: 20px 10px;
+                padding: 40px 20px !important;
+            }
         }
     </style>
 </head>
-<body class="bg-zinc-950 text-zinc-100 min-h-screen">
+<body class="bg-zinc-950 text-zinc-100">
 
     <!-- Cover -->
-    <section class="hero-bg min-h-screen flex items-center justify-center text-center px-6 relative">
+    <section class="hero-bg flex items-center justify-center text-center px-6 py-12 relative">
         
-        <div class="magazine-page p-12 md:p-16 max-w-2xl mx-auto">
-            <h1 class="text-7xl font-light tracking-tighter text-black mb-4">Jose</h1>
-            <p class="text-4xl text-amber-900 font-light mb-8">Architectural Photography</p>
+        <div class="magazine-page p-10 md:p-16 max-w-xl mx-auto">
+            <h1 class="text-6xl md:text-7xl font-light tracking-tighter text-black mb-4">Jose</h1>
+            <p class="text-3xl md:text-4xl text-amber-900 font-light mb-8">Architectural Photography</p>
             
             <!-- About Me -->
             <div class="mb-12 max-w-md mx-auto">
-                <p class="text-lg leading-relaxed text-amber-950">
+                <p class="text-base md:text-lg leading-relaxed text-amber-950">
                     I'm Jose, a photographer with a passion for capturing the beauty of architecture and spaces. 
                     I specialize in highlighting clean lines, natural light, and the unique character of buildings.
                 </p>
             </div>
 
             <a href="architectural.html" 
-               class="inline-block border-2 border-amber-900 hover:bg-amber-900 hover:text-white px-16 py-7 text-2xl tracking-wider transition">
+               class="inline-block border-2 border-amber-900 hover:bg-amber-900 hover:text-white px-12 py-6 text-xl md:text-2xl tracking-wider transition">
                ENTER THE PORTFOLIO
             </a>
         </div>
