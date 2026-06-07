@@ -17,30 +17,30 @@
             color: #1a1a1a;
         }
         .back-button {
-            color: #1a1a1a;
+            color: white;
             font-weight: 700;
+            font-size: 1.25rem;
             transition: all 0.3s ease;
         }
         .back-button:hover {
-            color: #854d0e;
-            transform: translateX(-4px);
+            color: #fcd34d;
+            transform: translateX(-6px);
         }
     </style>
 </head>
-<body class="min-h-screen py-12 px-6">
+<body class="min-h-screen py-12 px-6 bg-zinc-950">
 
     <div class="max-w-5xl mx-auto">
-        <!-- Improved Back Button -->
-        <a href="index.html" class="back-button inline-flex items-center gap-2 text-xl mb-10 hover:underline">
-            ← 
-            <span>BACK TO COVER</span>
+        <!-- White Back Button -->
+        <a href="index.html" class="back-button inline-flex items-center gap-3 mb-10">
+            ← <span>BACK TO COVER</span>
         </a>
         
         <div class="magazine-page p-10 md:p-16">
             <h1 class="text-5xl font-light text-center mb-12">Architectural Work</h1>
             
             <div id="gallery" class="space-y-16">
-                <!-- Your photos are here -->
+                <!-- Photos here -->
             </div>
         </div>
     </div>
@@ -58,7 +58,6 @@
             document.body.appendChild(modal);
         }
 
-        // Your photos
         const images = [
             "BrickHouse.png",
             "BrownBackyard.png",
