@@ -16,18 +16,31 @@
             border: 1px solid #d4c8b5;
             color: #1a1a1a;
         }
+        .back-button {
+            color: #1a1a1a;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            color: #854d0e;
+            transform: translateX(-4px);
+        }
     </style>
 </head>
 <body class="min-h-screen py-12 px-6">
 
     <div class="max-w-5xl mx-auto">
-        <a href="index.html" class="inline-block mb-8 text-amber-900 hover:text-amber-700 text-lg">← Back to Cover</a>
+        <!-- Improved Back Button -->
+        <a href="index.html" class="back-button inline-flex items-center gap-2 text-xl mb-10 hover:underline">
+            ← 
+            <span>BACK TO COVER</span>
+        </a>
         
         <div class="magazine-page p-10 md:p-16">
             <h1 class="text-5xl font-light text-center mb-12">Architectural Work</h1>
             
             <div id="gallery" class="space-y-16">
-                <!-- Your real photos -->
+                <!-- Your photos are here -->
             </div>
         </div>
     </div>
@@ -45,7 +58,7 @@
             document.body.appendChild(modal);
         }
 
-        // Your actual uploaded photos
+        // Your photos
         const images = [
             "BrickHouse.png",
             "BrownBackyard.png",
