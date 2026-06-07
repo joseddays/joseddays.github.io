@@ -10,26 +10,26 @@
             font-family: 'Georgia', serif;
         }
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
                         url('kitchen.png') center/cover no-repeat fixed;
             min-height: 100vh;
+            background-attachment: fixed;   /* Makes it static */
         }
         .magazine-page {
-            background: rgba(248, 241, 227, 0.95);
+            background: rgba(248, 241, 227, 0.92);
             box-shadow: 0 15px 40px rgba(0,0,0,0.7);
             border: 1px solid #d4c8b5;
             color: #1a1a1a;
         }
         
-        /* Better mobile experience */
         @media (max-width: 768px) {
             .hero-bg {
                 background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)), 
-                            url('kitchen.png') center/cover no-repeat;
+                            url('kitchen.png') center/cover no-repeat fixed;
             }
             .magazine-page {
-                margin: 15px 10px;
-                padding: 50px 25px !important;
+                margin: 20px 12px;
+                padding: 60px 30px !important;
             }
         }
     </style>
@@ -40,10 +40,9 @@
     <section class="hero-bg flex items-center justify-center text-center px-6 py-12 relative">
         
         <div class="magazine-page p-10 md:p-16 max-w-xl mx-auto">
-            <h1 class="text-6xl md:text-7xl font-light tracking-tighter text-black mb-4">Jose Diaz</h1>
+            <h1 class="text-6xl md:text-7xl font-light tracking-tighter text-black mb-4">Jose</h1>
             <p class="text-3xl md:text-4xl text-amber-900 font-light mb-8">Architectural Photography</p>
             
-            <!-- About Me -->
             <div class="mb-12 max-w-md mx-auto">
                 <p class="text-base md:text-lg leading-relaxed text-amber-950">
                     I'm Jose, a photographer with a passion for capturing the beauty of architecture and spaces. 
