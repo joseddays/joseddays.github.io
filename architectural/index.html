@@ -18,7 +18,7 @@
             <h1 class="text-5xl font-light text-center mb-12">Architectural Work</h1>
             
             <div id="gallery" class="space-y-16">
-                <!-- Photos will load here -->
+                <!-- Only the 3 real photos -->
             </div>
         </div>
     </div>
@@ -43,15 +43,6 @@
         ];
 
         const gallery = document.getElementById('gallery');
-        images.forEach(src => {
-            const div = document.createElement('div');
-            div.className = "cursor-pointer";
-            div.innerHTML = `<img src="${src}" class="w-full magazine-page p-8 shadow-2xl" onclick="openLightbox('${src}')">`;
-            gallery.appendChild(div);
-        });
-    </script>
-</body>
-</html>        const gallery = document.getElementById('gallery');
         images.forEach(src => {
             const div = document.createElement('div');
             div.className = "cursor-pointer";
