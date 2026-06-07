@@ -6,7 +6,10 @@
     <title>Architectural Work — Jose Photography</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Georgia', serif; background: #111; }
+        body { 
+            font-family: 'Georgia', serif; 
+            background: #111; 
+        }
         .magazine-page {
             background: #f8f1e3;
             box-shadow: 0 15px 40px rgba(0,0,0,0.7);
@@ -24,7 +27,7 @@
             <h1 class="text-5xl font-light text-center mb-12">Architectural Work</h1>
             
             <div id="gallery" class="space-y-16">
-                <!-- Your photos will go here -->
+                <!-- Your real photos -->
             </div>
         </div>
     </div>
@@ -42,10 +45,11 @@
             document.body.appendChild(modal);
         }
 
-        // Placeholder - replace with your real image paths
+        // Your actual uploaded photos
         const images = [
-            "https://via.placeholder.com/900x1200/ddd/222?text=Architectural+1",
-            "https://via.placeholder.com/900x1200/ddd/222?text=Architectural+2"
+            "BrickHouse.png",
+            "BrownBackyard.png",
+            "Staircase.png"
         ];
 
         const gallery = document.getElementById('gallery');
