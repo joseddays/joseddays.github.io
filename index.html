@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jose | Photography</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -19,76 +18,23 @@
         }
     </style>
 </head>
-<body class="bg-zinc-950 text-zinc-100">
+<body class="bg-zinc-950 text-zinc-100 min-h-screen">
 
-    <!-- Cover / Hero -->
-    <section id="cover" class="min-h-screen flex items-center justify-center text-center px-6 bg-cover bg-center relative"
-             style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://via.placeholder.com/1920x1080/000000/ffffff?text=Your+Best+Photo+Here');">
+    <!-- Cover -->
+    <section class="min-h-screen flex items-center justify-center text-center px-6 bg-cover bg-center relative"
+             style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://via.placeholder.com/1920x1080/000000/ffffff?text=Your+Hero+Photo');">
+        
         <div class="magazine-page p-16 max-w-2xl mx-auto">
-            <h1 class="text-7xl font-light tracking-tighter text-black mb-3">Jose</h1>
-            <p class="text-4xl text-amber-900 font-light mb-16">Photography</p>
+            <h1 class="text-7xl font-light tracking-tighter text-black mb-4">Jose</h1>
+            <p class="text-4xl text-amber-900 font-light mb-20">Photography</p>
             
-            <a href="#book" 
-               onclick="document.getElementById('book').scrollIntoView({ behavior: 'smooth' });"
-               class="inline-block border-2 border-amber-900 hover:bg-amber-900 hover:text-white px-14 py-6 text-2xl tracking-wider transition">
-               OPEN THE BOOK
-            </a>
-        </div>
-    </section>
-
-    <!-- The Book (Albums Section) -->
-    <section id="book" class="py-20 px-6 max-w-6xl mx-auto">
-        <div class="magazine-page p-10 md:p-16">
-            <h2 class="text-5xl font-light text-center mb-12 text-amber-950">The Work</h2>
-            
-            <!-- Album Tabs -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12 border-b border-amber-900 pb-6">
-                <button onclick="switchAlbum(0)" class="album-btn active px-8 py-3 text-lg border border-amber-900 hover:bg-amber-900 hover:text-white">Street</button>
-                <button onclick="switchAlbum(1)" class="album-btn px-8 py-3 text-lg border border-amber-900 hover:bg-amber-900 hover:text-white">Portraits</button>
-                <button onclick="switchAlbum(2)" class="album-btn px-8 py-3 text-lg border border-amber-900 hover:bg-amber-900 hover:text-white">Landscapes</button>
-            </div>
-
-            <div id="album-content" class="min-h-[600px]">
-                <!-- JS will fill this -->
+            <div class="space-y-6">
+                <a href="street.html" class="block border-2 border-amber-900 hover:bg-amber-900 hover:text-white px-12 py-6 text-2xl transition">STREET</a>
+                <a href="portraits.html" class="block border-2 border-amber-900 hover:bg-amber-900 hover:text-white px-12 py-6 text-2xl transition">PORTRAITS</a>
+                <a href="landscapes.html" class="block border-2 border-amber-900 hover:bg-amber-900 hover:text-white px-12 py-6 text-2xl transition">LANDSCAPES</a>
             </div>
         </div>
     </section>
 
-    <script>
-        const albums = [
-            { title: "Street", images: ["https://via.placeholder.com/900x1200/ddd/222?text=Street+1", "https://via.placeholder.com/900x1200/ddd/222?text=Street+2"] },
-            { title: "Portraits", images: ["https://via.placeholder.com/900x1200/ddd/222?text=Portrait+1"] },
-            { title: "Landscapes", images: ["https://via.placeholder.com/900x1200/ddd/222?text=Landscape+1", "https://via.placeholder.com/900x1200/ddd/222?text=Landscape+2"] }
-        ];
-
-        function switchAlbum(n) {
-            const content = document.getElementById('album-content');
-            let html = `<h3 class="text-4xl font-light mb-10 text-center">${albums[n].title}</h3>`;
-            
-            albums[n].images.forEach(src => {
-                html += `
-                    <div onclick="openLightbox('${src}')" class="mb-12 cursor-pointer">
-                        <img src="${src}" class="w-full magazine-page p-6 shadow-2xl hover:shadow-3xl transition" alt="">
-                    </div>
-                `;
-            });
-            content.innerHTML = html;
-        }
-
-        function openLightbox(src) {
-            const modal = document.createElement('div');
-            modal.className = 'fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4';
-            modal.innerHTML = `
-                <div class="magazine-page max-w-4xl p-8 max-h-[90vh] overflow-auto relative">
-                    <img src="${src}" class="mx-auto shadow-2xl" style="max-height: 80vh;">
-                    <button onclick="this.closest('.fixed').remove()" class="absolute -top-4 -right-4 text-5xl text-amber-900 hover:text-red-600">×</button>
-                </div>
-            `;
-            document.body.appendChild(modal);
-        }
-
-        // Load first album automatically
-        window.onload = () => switchAlbum(0);
-    </script>
 </body>
 </html>
