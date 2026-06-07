@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street — Jose Photography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Georgia', serif; background: #111; }
+        .magazine-page {
+            background: #f8f1e3;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+            border: 1px solid #d4c8b5;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-12 px-6">
+
+    <div class="max-w-5xl mx-auto">
+        <a href="index.html" class="inline-block mb-8 text-amber-900 hover:text-amber-700">← Back to Cover</a>
+        
+        <div class="magazine-page p-12">
+            <h1 class="text-5xl font-light text-center mb-12">Street</h1>
+            
+            <!-- Add your photos here -->
+            <div class="space-y-12">
+                <img src="https://via.placeholder.com/900x1200/ddd/222?text=Street+Photo+1" 
+                     class="magazine-page p-6 shadow-2xl w-full cursor-pointer" onclick="openLightbox(this.src)">
+                <!-- Add more images like this -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4';
+            modal.innerHTML = `
+                <div class="magazine-page max-w-4xl p-8 max-h-[90vh] overflow-auto relative">
+                    <img src="${src}" class="mx-auto shadow-2xl" style="max-height: 85vh;">
+                    <button onclick="this.closest('.fixed').remove()" class="absolute -top-4 -right-4 text-5xl text-amber-900">×</button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+    </script>
+</body>
+</html>
