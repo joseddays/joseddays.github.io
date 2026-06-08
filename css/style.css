@@ -2,19 +2,18 @@ body {
     font-family: 'Georgia', serif;
 }
 
-/* Two images side by side */
+/* Main Background */
 .hero-bg {
     background: 
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
-        url('../kitchen.png') left/75% no-repeat,
-        url('../Staircase.png') right/25% no-repeat;
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.55)),
+        url('../kitchen.png') center/cover no-repeat;
     background-color: #111;
     min-height: 100vh;
     background-attachment: fixed;
 }
 
 .magazine-page {
-    background: rgba(248, 241, 227, 0.22);
+    background: rgba(248, 241, 227, 0.45);   /* Increased opacity */
     box-shadow: 0 15px 40px rgba(0,0,0,0.7);
     border: 1px solid #d4c8b5;
     color: #1a1a1a;
@@ -35,10 +34,6 @@ body {
 /* Mobile */
 @media (max-width: 768px) {
     .hero-bg {
-        background: 
-            linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
-            url('../kitchen.png') left/70% no-repeat,
-            url('../Staircase.png') right/30% no-repeat;
         background-attachment: scroll;
     }
     .magazine-page {
