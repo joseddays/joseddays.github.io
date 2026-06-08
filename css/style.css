@@ -2,18 +2,37 @@ body {
     font-family: 'Georgia', serif;
 }
 
-/* Two Images Side by Side - Properly Zoomed */
+/* Two Images Side by Side */
 .hero-bg {
     background: 
         linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.6)),
         url('../kitchen.png') left/75% no-repeat,
         url('../Staircase.png') right/25% no-repeat;
+    
     background-size: 
-        auto 100%,   /* Kitchen */
-        auto 100%;   /* Staircase - zoomed to fill */
+        cover,           /* Kitchen */
+        120% auto;       /* Staircase - zoomed in */
+    
+    background-position: 
+        center,          /* Kitchen */
+        left center;     /* Staircase - moved focus to the LEFT side */
+    
     background-color: #111;
     min-height: 100vh;
     background-attachment: fixed;
+}
+
+/* Vertical separator line */
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    right: 25%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    z-index: 1;
 }
 
 .magazine-page {
@@ -21,6 +40,8 @@ body {
     box-shadow: 0 15px 40px rgba(0,0,0,0.7);
     border: 1px solid #d4c8b5;
     color: #1a1a1a;
+    position: relative;
+    z-index: 2;
 }
 
 .back-button {
@@ -42,7 +63,11 @@ body {
             linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.6)),
             url('../kitchen.png') left/70% no-repeat,
             url('../Staircase.png') right/30% no-repeat;
-        background-size: auto 100%, auto 100%;
+        background-size: cover, 130% auto;
+        background-position: center, left center;
         background-attachment: scroll;
+    }
+    .hero-bg::after {
+        right: 30%;
     }
 }
