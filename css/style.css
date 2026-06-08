@@ -2,11 +2,12 @@ body {
     font-family: 'Georgia', serif;
 }
 
-/* Background - Zoomed in, fills the space better */
+/* Two images side by side */
 .hero-bg {
     background: 
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.6)),
-        url('../kitchen.png') center/cover no-repeat;
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+        url('../kitchen.png') left/75% no-repeat,
+        url('../Staircase.png') right/25% no-repeat;
     background-color: #111;
     min-height: 100vh;
     background-attachment: fixed;
@@ -34,8 +35,11 @@ body {
 /* Mobile */
 @media (max-width: 768px) {
     .hero-bg {
+        background: 
+            linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+            url('../kitchen.png') left/70% no-repeat,
+            url('../Staircase.png') right/30% no-repeat;
         background-attachment: scroll;
-        background-position: center 30%;   /* Adjust this number to control zoom */
     }
     .magazine-page {
         margin: 20px 12px;
