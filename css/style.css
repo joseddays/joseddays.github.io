@@ -2,7 +2,7 @@ body {
     font-family: 'Georgia', serif;
 }
 
-/* Two Images Side by Side */
+/* Two Images Side by Side - 60% / 40% */
 .hero-bg {
     background: 
         linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.6)),
@@ -11,27 +11,28 @@ body {
     
     background-size: 
         cover,           /* Kitchen */
-        120% auto;       /* Staircase - zoomed in */
+        130% auto;       /* Staircase - zoomed */
     
     background-position: 
         center,          /* Kitchen */
-        left center;     /* Staircase - moved focus to the LEFT side */
+        left center;     /* Staircase - focus on left side */
     
     background-color: #111;
     min-height: 100vh;
     background-attachment: fixed;
+    position: relative;
 }
 
-/* Vertical separator line */
+/* White border between the two images */
 .hero-bg::after {
     content: '';
     position: absolute;
-    right: 25%;
+    right: 40%;
     top: 0;
     bottom: 0;
-    width: 3px;
-    background: rgba(255,255,255,0.25);
-    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    width: 4px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     z-index: 1;
 }
 
@@ -61,13 +62,13 @@ body {
     .hero-bg {
         background: 
             linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.6)),
-            url('../kitchen.png') left/70% no-repeat,
-            url('../Staircase.png') right/30% no-repeat;
-        background-size: cover, 130% auto;
+            url('../kitchen.png') left/60% no-repeat,
+            url('../Staircase.png') right/40% no-repeat;
+        background-size: cover, 140% auto;
         background-position: center, left center;
         background-attachment: scroll;
     }
     .hero-bg::after {
-        right: 30%;
+        right: 40%;
     }
 }
