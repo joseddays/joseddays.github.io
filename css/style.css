@@ -6,8 +6,8 @@ body {
 .hero-bg {
     background: 
         linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.6)),
-        url('../kitchen.png') left/75% no-repeat,
-        url('../Staircase.png') right/25% no-repeat;
+        url('../kitchen.png') left/60% no-repeat,
+        url('../Staircase.png') right/40% no-repeat;
     
     background-size: 
         cover,           /* Kitchen */
