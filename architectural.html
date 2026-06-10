@@ -3,36 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architectural Work — Jose Photography</title>
+    <title>Architectural Work — Jose Diaz</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { 
-            font-family: 'Georgia', serif; 
-            background: #111; 
-        }
-        .magazine-page {
-            background: #f8f1e3;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
-            border: 1px solid #d4c8b5;
-            color: #1a1a1a;
-        }
-        .back-button {
-            color: white;
-            font-weight: 700;
-            font-size: 1.25rem;
-            transition: all 0.3s ease;
-        }
-        .back-button:hover {
-            color: #fcd34d;
-            transform: translateX(-6px);
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="min-h-screen py-12 px-6 bg-zinc-950">
 
     <div class="max-w-5xl mx-auto">
-        <!-- White Back Button -->
-        <a href="index.html" class="back-button inline-flex items-center gap-3 mb-10">
+        <a href="../" class="back-button inline-flex items-center gap-3 mb-10">
             ← <span>BACK TO COVER</span>
         </a>
         
@@ -40,30 +18,33 @@
             <h1 class="text-5xl font-light text-center mb-12">Architectural Work</h1>
             
             <div id="gallery" class="space-y-16">
-                <!-- Photos here -->
+                <!-- Photos loaded by JS -->
             </div>
         </div>
     </div>
 
+    <!-- Link to external JavaScript file -->
+    <script src="../js/script.js"></script>
+    
     <script>
-        function openLightbox(src) {
-            const modal = document.createElement('div');
-            modal.className = 'fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4';
-            modal.innerHTML = `
-                <div class="magazine-page max-w-4xl p-8 max-h-[90vh] overflow-auto relative">
-                    <img src="${src}" class="mx-auto shadow-2xl" style="max-height: 85vh;">
-                    <button onclick="this.closest('.fixed').remove()" class="absolute -top-4 -right-4 text-5xl text-amber-900">×</button>
-                </div>
-            `;
-            document.body.appendChild(modal);
-        }
-
+        // Gallery images
         const images = [
-            "BrickHouse.png",
-            "BrownBackyard.png",
-            "Staircase.png"
+            "../BrickHouse.png",
+            "../BrownBackyard.png",
+            "../Staircase.png"
         ];
 
+        const gallery = document.getElementById('gallery');
+        
+        images.forEach(src => {
+            const div = document.createElement('div');
+            div.className = "cursor-pointer";
+            div.innerHTML = `<img src="${src}" class="w-full magazine-page p-8 shadow-2xl gallery-img" onclick="openLightbox('${src}')">`;
+            gallery.appendChild(div);
+        });
+    </script>
+</body>
+</html>
         const gallery = document.getElementById('gallery');
         images.forEach(src => {
             const div = document.createElement('div');
