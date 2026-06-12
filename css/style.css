@@ -18,7 +18,7 @@
   --border:     #2a2a2a;
   --stone:      #c8b89a;
   --off-white:  #f0ede8;
-  --muted:      #666;
+  --muted:      #888;
   --font-display: 'Cormorant Garamond', serif;
   --font-body:    'Inter', sans-serif;
 }
@@ -152,7 +152,7 @@ a {
   font-weight: 400;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--stone);
+  color: #d4c4a8;
   margin-bottom: 20px;
 }
 
@@ -171,7 +171,7 @@ a {
   font-weight: 300;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: #b0b0b0;
   max-width: 360px;
   line-height: 1.8;
 }
