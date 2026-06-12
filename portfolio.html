@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Jose Diaz</title>
+  <meta name="description" content="Architectural photography portfolio by Jose Diaz.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Main navigation">
+    <a class="nav-logo" href="index.html">Jose Diaz</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header fade-up">
+    <p class="section-label">Work</p>
+    <h1>Portfolio</h1>
+    <p>Architectural photography — residential, commercial, and urban spaces throughout Arizona and beyond.</p>
+  </header>
+
+  <!-- Gallery Controls -->
+  <div class="gallery-controls">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="residential">Residential</button>
+    <button class="filter-btn" data-filter="commercial">Commercial</button>
+    <button class="filter-btn" data-filter="detail">Detail</button>
+    <span class="gallery-count">4 works</span>
+  </div>
+
+  <!-- Gallery -->
+  <main>
+    <div class="gallery" id="gallery" aria-label="Photo gallery">
+
+      <div class="gallery-item" data-category="residential">
+        <img src="images/architectural/BrickHouse.png" alt="Brick house exterior" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <div class="overlay-icon">+</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="detail">
+        <img src="images/architectural/BrownBackyard.png" alt="Backyard architectural detail" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <div class="overlay-icon">+</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="detail">
+        <img src="images/architectural/Staircase.png" alt="Staircase interior" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <div class="overlay-icon">+</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="residential">
+        <img src="images/architectural/kitchen.png" alt="Kitchen interior" loading="lazy">
+        <div class="gallery-item-overlay" aria-hidden="true">
+          <div class="overlay-icon">+</div>
+        </div>
+      </div>
+
+      <!--
+        TO ADD MORE PHOTOS:
+        1. Drop the image file into images/architectural/
+        2. Copy one of the blocks above
+        3. Update src, alt, and data-category
+        That's it — the gallery handles the rest.
+      -->
+
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous">&#8592;</button>
+    <div class="lightbox-inner">
+      <img class="lightbox-img" src="" alt="Enlarged photo">
+    </div>
+    <button class="lightbox-next" aria-label="Next">&#8594;</button>
+    <p class="lightbox-caption"></p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <span class="footer-logo">Jose Diaz</span>
+    <ul class="footer-links" role="list">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="year"></span> Jose Diaz</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

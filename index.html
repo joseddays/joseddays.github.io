@@ -1,34 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jose Diaz | Architectural Photography</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jose Diaz — Architectural Photography</title>
+  <meta name="description" content="Jose Diaz — Architectural photographer documenting structures, spaces, and the details that define them.">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-zinc-950 text-zinc-100">
+<body>
 
-    <!-- Clean Cover -->
-    <section class="hero-bg flex items-center justify-center text-center px-6 py-12 min-h-screen">
-        <div class="magazine-page p-10 md:p-16 max-w-xl mx-auto">
-            <h1 class="text-6xl md:text-7xl font-light tracking-tighter text-black mb-4">Jose Diaz</h1>
-            <p class="text-3xl md:text-4xl text-amber-900 font-light mb-8">Architectural Photography</p>
-            
-            <div class="mb-12 max-w-md mx-auto">
-                <p class="text-base md:text-lg leading-relaxed text-amber-950">
-                    I'm Jose, a photographer with an interest in architecture and visual storytelling. 
-                    This portfolio showcases my ongoing work as I continue to build experience photographing 
-                    spaces and the details that define them.
-                </p>
-            </div>
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Main navigation">
+    <a class="nav-logo" href="index.html">Jose Diaz</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-            <a href="architectural/" 
-               class="inline-block border-2 border-amber-900 hover:bg-amber-900 hover:text-white px-12 py-6 text-xl md:text-2xl tracking-wider transition">
-               ENTER THE PORTFOLIO
-            </a>
-        </div>
-    </section>
+  <!-- Hero -->
+  <section class="hero" aria-label="Hero">
+    <!--
+      REPLACE src with your hero photo path.
+      Best: a wide landscape architectural shot.
+      Example: images/architectural/hero.jpg
+    -->
+    <img
+      class="hero-image"
+      src="images/architectural/BrickHouse.png"
+      alt="Architectural photography by Jose Diaz"
+    >
+    <div class="hero-content">
+      <p class="hero-eyebrow">Architectural Photography</p>
+      <h1 class="hero-name">Jose<br>Diaz</h1>
+      <p class="hero-sub">Documenting structures, spaces,<br>and the details that define them.</p>
+      <a class="hero-cta" href="portfolio.html">View Portfolio</a>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+    </div>
+  </section>
 
+  <!-- Intro Strip -->
+  <section class="intro-strip" aria-label="Introduction">
+    <div class="intro-text fade-up">
+      <p class="section-label">The Work</p>
+      <h2>Architecture as visual storytelling</h2>
+      <p>
+        Every structure holds a story — in the angle of light through a stairwell,
+        the geometry of a facade, the way a space breathes. I photograph architecture
+        with the patience to find those moments.
+      </p>
+      <p>
+        Based in Arizona, available for residential, commercial,
+        and editorial projects.
+      </p>
+      <a class="btn-outline" href="portfolio.html">Browse the Portfolio</a>
+    </div>
+    <div class="intro-image">
+      <img
+        src="images/architectural/Staircase.png"
+        alt="Architectural detail"
+      >
+    </div>
+  </section>
+
+  <!-- Featured Work -->
+  <section class="featured-section" aria-label="Featured Work">
+    <h2>
+      Selected Work
+      <a href="portfolio.html">All Work →</a>
+    </h2>
+    <div class="featured-grid">
+      <div class="featured-item fade-up" onclick="openLightbox('images/architectural/BrickHouse.png', 0, ['images/architectural/BrickHouse.png','images/architectural/BrownBackyard.png','images/architectural/kitchen.png'])">
+        <img src="images/architectural/BrickHouse.png" alt="Brick house exterior">
+        <div class="featured-item-label">Residential</div>
+      </div>
+      <div class="featured-item fade-up" onclick="openLightbox('images/architectural/BrownBackyard.png', 1, ['images/architectural/BrickHouse.png','images/architectural/BrownBackyard.png','images/architectural/kitchen.png'])">
+        <img src="images/architectural/BrownBackyard.png" alt="Backyard architectural detail">
+        <div class="featured-item-label">Detail</div>
+      </div>
+      <div class="featured-item fade-up" onclick="openLightbox('images/architectural/kitchen.png', 2, ['images/architectural/BrickHouse.png','images/architectural/BrownBackyard.png','images/architectural/kitchen.png'])">
+        <img src="images/architectural/kitchen.png" alt="Kitchen interior">
+        <div class="featured-item-label">Interior</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous">&#8592;</button>
+    <div class="lightbox-inner">
+      <img class="lightbox-img" src="" alt="Enlarged photo">
+    </div>
+    <button class="lightbox-next" aria-label="Next">&#8594;</button>
+    <p class="lightbox-caption"></p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <span class="footer-logo">Jose Diaz</span>
+    <ul class="footer-links" role="list">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; <span id="year"></span> Jose Diaz</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
