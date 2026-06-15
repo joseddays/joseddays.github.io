@@ -9,75 +9,44 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <nav class="nav" aria-label="Main navigation">
-    <a class="nav-logo" href="index.html">Jose Diaz</a>
+    <a class="nav-logo" href="/">Jose Diaz</a>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" role="list">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="about.html#contact">Contact</a></li>
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/portfolio/">Portfolio</a></li>
+      <li><a href="/about/">About</a></li>
     </ul>
   </nav>
 
-  <!-- Hero -->
   <section class="hero" aria-label="Hero">
-    <!--
-      REPLACE src with your hero photo path.
-      Best: a wide landscape architectural shot.
-      Example: images/architectural/hero.jpg
-    -->
-    <img
-      class="hero-image"
-      src="images/architectural/DetailedBuilding_TempeRandom.jpg"
-      alt="Architectural photography by Jose Diaz"
-    >
+    <img class="hero-image" src="images/architectural/CurbyWindows.jpg" alt="Architectural photography by Jose Diaz">
     <div class="hero-content">
       <p class="hero-eyebrow">Architectural Photography</p>
       <h1 class="hero-name">Jose<br>Diaz</h1>
       <p class="hero-sub">Documenting structures, spaces,<br>and the details that define them.</p>
-      <a class="hero-cta" href="portfolio.html">View Portfolio</a>
+      <a class="hero-cta" href="/portfolio/">View Portfolio</a>
     </div>
-    <div class="scroll-hint" aria-hidden="true">
-      <span>Scroll</span>
-    </div>
+    <div class="scroll-hint" aria-hidden="true"><span>Scroll</span></div>
   </section>
 
-  <!-- Intro Strip -->
   <section class="intro-strip" aria-label="Introduction">
     <div class="intro-text fade-up">
       <p class="section-label">The Work</p>
       <h2>Architecture as visual storytelling</h2>
-      <p>
-        Every structure holds a story — in the angle of light through a stairwell,
-        the geometry of a facade, the way a space breathes. I photograph architecture
-        with the patience to find those moments.
-      </p>
-      <p>
-        Based in Arizona, available for residential, commercial,
-        and editorial projects.
-      </p>
-      <a class="btn-outline" href="portfolio.html">Browse the Portfolio</a>
+      <p>Every structure holds a story — in the angle of light through a stairwell, the geometry of a facade, the way a space breathes. I photograph architecture with the patience to find those moments.</p>
+      <p>Based in Arizona, available for residential, commercial, and editorial projects.</p>
+      <a class="btn-outline" href="/portfolio/">Browse the Portfolio</a>
     </div>
     <div class="intro-image">
-      <img
-        src="images/architectural/Staircase.png"
-        alt="Architectural detail"
-      >
+      <img src="images/architectural/Staircase.png" alt="Architectural detail">
     </div>
   </section>
 
-  <!-- Featured Work -->
   <section class="featured-section" aria-label="Featured Work">
-    <h2>
-      Selected Work
-      <a href="portfolio.html">All Work →</a>
-    </h2>
+    <h2>Selected Work <a href="/portfolio/">All Work →</a></h2>
     <div class="featured-grid">
       <div class="featured-item fade-up" onclick="openLightbox('images/architectural/BrickHouse.png', 0, ['images/architectural/BrickHouse.png','images/architectural/BrownBackyard.png','images/architectural/kitchen.png'])">
         <img src="images/architectural/BrickHouse.png" alt="Brick house exterior">
@@ -94,24 +63,19 @@
     </div>
   </section>
 
-  <!-- Lightbox -->
   <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button class="lightbox-close" aria-label="Close">&times;</button>
     <button class="lightbox-prev" aria-label="Previous">&#8592;</button>
-    <div class="lightbox-inner">
-      <img class="lightbox-img" src="" alt="Enlarged photo">
-    </div>
+    <div class="lightbox-inner"><img class="lightbox-img" src="" alt="Enlarged photo"></div>
     <button class="lightbox-next" aria-label="Next">&#8594;</button>
     <p class="lightbox-caption"></p>
   </div>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <span class="footer-logo">Jose Diaz</span>
     <ul class="footer-links" role="list">
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="about.html#contact">Contact</a></li>
+      <li><a href="/portfolio/">Portfolio</a></li>
+      <li><a href="/about/">About</a></li>
     </ul>
     <p class="footer-copy">&copy; <span id="year"></span> Jose Diaz</p>
   </footer>
